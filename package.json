@@ -1,0 +1,18 @@
+{
+    "name": "Unsplash",
+    "description": "Unsplash Discord Bot. Made by ejer",
+    "version": "1.0.7",
+    "main": "bot.js",
+    "scripts": {
+        "start": "node bot.js"
+    },
+    "author": "ejer",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^11.4.2",
+        "es6-promise": "^4.2.6",
+        "isomorphic-fetch": "^2.2.1",
+        "npm": "^6.9.0",
+        "unsplash-js": "^5.0.0"
+    }
+}
