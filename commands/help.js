@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
         let help2 = new Discord.RichEmbed()
             .setTitle("Commands")
             .setColor('#ffffff')
-            .setDescription("Type `u!help [command]` to get information about a command.\n\n" + client.commands.map(cmd => `\`${cmd.help.name}\` - ${cmd.help.description}`).join("\n"));
+            .setDescription("Type `u!help [command]` to get information about a command.\n\n" + client.commands.filter(cmd => !cmd.help.dev).map(cmd => `\`${cmd.help.name}\` - ${cmd.help.description}`).join("\n"));
 
         message.channel.send(embed);
         message.author.send(help1);

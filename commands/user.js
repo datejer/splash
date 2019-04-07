@@ -5,20 +5,26 @@ const Unsplash = require('unsplash-js').default;
 const toJson = require("unsplash-js").toJson;
 
 exports.run = async (client, message, args) => {
+    if (!args[0]) return message.reply("Please enter a user.")
+
     // Delete all @'s in the username argument to minimize confusion.
     let inputUsername = args[0].replace(/@/g, "");
 
     // Cooldown system.
+    if (!client.cooldownUser) {
+        client.cooldownUser = new Set();
+    }
+
     let cooldownEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setColor('#ffffff')
         .setDescription(`Please wait ${exports.help.cooldown} seconds between commands.`)
 
-    if (client.cooldown.has(message.author.id)) return message.channel.send(cooldownEmbed);
+    if (client.cooldownUser.has(message.author.id)) return message.channel.send(cooldownEmbed);
 
-    client.cooldown.add(message.author.id);
+    client.cooldownUser.add(message.author.id);
     setTimeout(() => {
-        client.cooldown.delete(message.author.id);
+        client.cooldownUser.delete(message.author.id);
     }, exports.help.cooldown * 1000);
 
     if (!inputUsername) return message.reply("Please enter a username.")

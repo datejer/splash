@@ -6,16 +6,20 @@ const toJson = require("unsplash-js").toJson;
 
 exports.run = async (client, message, args) => {
     // Cooldown system.
+    if (!client.cooldownCollection) {
+        client.cooldownCollection = new Set();
+    }
+
     let cooldownEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setColor('#ffffff')
         .setDescription(`Please wait ${exports.help.cooldown} seconds between commands.`)
 
-    if (client.cooldown.has(message.author.id)) return message.channel.send(cooldownEmbed);
+    if (client.cooldownCollectioncooldownCollection.has(message.author.id)) return message.channel.send(cooldownEmbed);
 
-    client.cooldown.add(message.author.id);
+    client.cooldownCollection.add(message.author.id);
     setTimeout(() => {
-        client.cooldown.delete(message.author.id);
+        client.cooldownCollection.delete(message.author.id);
     }, exports.help.cooldown * 1000);
 
     if (!args[0]) return message.reply("Please enter a keyword.")

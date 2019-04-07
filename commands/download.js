@@ -6,16 +6,20 @@ const toJson = require("unsplash-js").toJson;
 
 exports.run = async (client, message, args) => {
     // Cooldown system.
+    if (!client.cooldownDownload) {
+        client.cooldownDownload = new Set();
+    }
+
     let cooldownEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setColor('#ffffff')
         .setDescription(`Please wait ${exports.help.cooldown} seconds between commands.`)
 
-    if (client.cooldown.has(message.author.id)) return message.channel.send(cooldownEmbed);
+    if (client.cooldownDownload.has(message.author.id)) return message.channel.send(cooldownEmbed);
 
-    client.cooldown.add(message.author.id);
+    client.cooldownDownload.add(message.author.id);
     setTimeout(() => {
-        client.cooldown.delete(message.author.id);
+        client.cooldownDownload.delete(message.author.id);
     }, exports.help.cooldown * 1000);
 
     if (!args[0]) return message.reply("Please enter a photo ID.")
@@ -44,7 +48,7 @@ exports.run = async (client, message, args) => {
             // Send the download link of the photo with its information.
             let embed = new Discord.RichEmbed()
                 .setTitle("Download [Click]")
-                .setDescription(`ID: \`${args[0]}\`\n\n${json.alt_description}`)
+                .setDescription(`ID: \`${args[0]}\`\n\n${json.alt_description ? json.alt_description : "No description."}`)
                 .setURL(json.links.download)
                 .setColor(json.color)
                 .setThumbnail(json.urls.raw)

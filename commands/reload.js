@@ -45,5 +45,6 @@ exports.help = {
     name: "reload",
     description: "Reload a command.",
     cooldown: "0",
-    usage: "reload <command>"
+    usage: "reload <command>",
+    dev: true
 };

@@ -6,16 +6,20 @@ const toJson = require("unsplash-js").toJson;
 
 exports.run = async (client, message, args) => {
     // Cooldown system.
+    if (!client.cooldownFeatured) {
+        client.cooldownFeatured = new Set();
+    }
+
     let cooldownEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setColor('#ffffff')
         .setDescription(`Please wait ${exports.help.cooldown} seconds between commands.`)
 
-    if (client.cooldown.has(message.author.id)) return message.channel.send(cooldownEmbed);
+    if (client.cooldownFeatured.has(message.author.id)) return message.channel.send(cooldownEmbed);
 
-    client.cooldown.add(message.author.id);
+    client.cooldownFeatured.add(message.author.id);
     setTimeout(() => {
-        client.cooldown.delete(message.author.id);
+        client.cooldownFeatured.delete(message.author.id);
     }, exports.help.cooldown * 1000);
 
     // Create new instance of the API.
