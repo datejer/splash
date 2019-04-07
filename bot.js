@@ -15,10 +15,9 @@ const fs = require("fs");
 const client = new Discord.Client({
     disableEveryone: true
 });
-const config = require("./config.json");
+const config = require("./config.js");
 
-client.config = config;
-client.cooldown = new Set();
+client.config = config.content;
 
 // Load all events from folder.
 fs.readdir("./events/", (err, files) => {
@@ -48,4 +47,4 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`[Commands] Loaded ${files.length} commands!`);
 });
 
-client.login(config.token);
+client.login(client.config.token);
