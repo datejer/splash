@@ -1,3 +1,5 @@
+const Discord = require("discord.js");
+
 module.exports = (client, error) => {
     // Bot errors due to connection problems.
 
@@ -14,5 +16,5 @@ module.exports = (client, error) => {
         .setTimestamp();
 
     // Send a DM notification of the error.
-    return message.channel.send(embed);
+    return ejer.send(embed);
 }
