@@ -1,7 +1,7 @@
 {
-	"name": "unsplash",
-	"description": "Unsplash Discord Bot. Made by ejer",
-	"version": "1.0.9",
+	"name": "splash",
+	"description": "Splash Discord Bot. Made by ejer",
+	"version": "1.1.0",
 	"main": "bot.js",
 	"scripts": {
 		"start": "node bot.js"
