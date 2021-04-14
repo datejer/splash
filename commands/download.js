@@ -66,7 +66,7 @@ exports.run = async (client, message, args) => {
 				.setThumbnail(json.urls.raw)
 				.setTimestamp(json.created_at)
 				.setFooter(
-					`${json.user.name} (@${json.user.username})`,
+					`${json.user.name} (@${json.user.username}) on Unsplash`,
 					json.user.profile_image.medium
 				)
 				.addField("Views", json.views, true)

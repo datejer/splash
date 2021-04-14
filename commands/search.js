@@ -70,7 +70,7 @@ exports.run = async (client, message, args) => {
 					// Send the photo with all of it's information.
 					let embed = new Discord.MessageEmbed()
 						.setAuthor(
-							`${json.user.name} (@${json.user.username})`,
+							`${json.user.name} (@${json.user.username}) on Unsplash`,
 							json.user.profile_image.medium,
 							json.user.links.html
 						)

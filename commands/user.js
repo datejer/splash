@@ -56,7 +56,7 @@ exports.run = async (client, message, args) => {
 
 			// Send the information about the user and his profile.
 			let embed = new Discord.MessageEmbed()
-				.setTitle(`${json.name} (@${json.username})`)
+				.setTitle(`${json.name} (@${json.username}) on Unsplash`)
 				.setURL(json.links.html)
 				.setColor(client.config.colors.primary)
 				.setThumbnail(json.profile_image.large)
