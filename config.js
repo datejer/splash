@@ -3,6 +3,6 @@ exports.content = {
 	prefix: "u!",
 	activityMessage: "beautiful photos. | u!help",
 	activityType: "WATCHING",
-	unsplashAccessKey: accessKey,
-	unsplashSecretKey: secretKey,
+	unsplashAccessKey: process.env.accessKey,
+	unsplashSecretKey: process.env.secretKey,
 };
