@@ -5,4 +5,7 @@ exports.content = {
 	activityType: "WATCHING",
 	unsplashAccessKey: process.env.accessKey,
 	unsplashSecretKey: process.env.secretKey,
+	colors: {
+		primary: "#fefefe",
+	},
 };

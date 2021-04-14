@@ -9,7 +9,7 @@
 	"author": "ejer",
 	"license": "ISC",
 	"dependencies": {
-		"discord.js": "^11.4.2",
+		"discord.js": "^12.5.3",
 		"dotenv": "^8.2.0",
 		"es6-promise": "^4.2.6",
 		"isomorphic-fetch": "^2.2.1",
