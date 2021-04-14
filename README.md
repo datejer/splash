@@ -1,5 +1,5 @@
-<img width="200" height="200" align="left" style="float: left; margin: 0 10px 0 0;" alt="Unsplash" src="https://i.imgur.com/x2g0H1x.png">
+<img width="200" height="200" align="left" style="float: left; margin: 0 10px 0 0;" alt="Splash" src="https://i.imgur.com/81UaOzH.png">
 
-# Unsplash Discord Bot
+# Splash Discord Bot
 
-Unsplash is a discord bot that brings you beautiful photos from unsplash.com straight to your discord server! Made by ejer#9484
+Splash is a discord bot that brings you beautiful photos from unsplash.com straight to your discord server! Bot made by ejer#9484
