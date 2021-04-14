@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
 			.setTitle("About")
 			.setColor(client.config.colors.primary)
 			.setDescription(
-				`${client.user} is a discord bot that brings you beautiful photos from **unsplash.com** straight to your discord server!\nAll photos belong to their rightful owners and are publicly accessible via [Unsplash](https://unsplash.com/)\nBot made by \`ejer#9484\`\n\n[Website](http://ejer.ga/unsplash)\n[Invite](https://discordapp.com/oauth2/authorize?client_id=560568497801789443&permissions=388160&scope=bot)\n[Support Server](https://discord.gg/vkRkMue)\n[Vote](http://ejer.ga/unsplash/?vote)\n[Donate](http://donate.ejer.ga)`
+				`${client.user} is a discord bot that brings you beautiful photos from **unsplash.com** straight to your discord server!\nAll photos belong to their rightful owners and are publicly accessible via [Unsplash](https://unsplash.com/)\nBot made by \`ejer#9484\`\n\n[Website](http://ejer.ga/unsplash)\n[Invite](https://discordapp.com/oauth2/authorize?client_id=560568497801789443&permissions=388160&scope=bot)\n[Support Server](https://discord.gg/vkRkMue)\n[Vote](http://ejer.ga/unsplash/?vote)`
 			);
 
 		let help2 = new Discord.MessageEmbed()
