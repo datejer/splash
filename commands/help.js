@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
 			.setTitle("Commands")
 			.setColor(client.config.colors.primary)
 			.setDescription(
-				"Type `u!help [command]` to get information about a command.\n\n" +
+				`Type \`${client.config.prefix}help [command]\` to get information about a command.\n\n` +
 					client.commands
 						.filter((cmd) => !cmd.help.dev)
 						.map((cmd) => `\`${cmd.help.name}\` - ${cmd.help.description}`)
