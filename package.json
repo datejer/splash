@@ -13,7 +13,7 @@
 		"dotenv": "^8.2.0",
 		"es6-promise": "^4.2.6",
 		"isomorphic-fetch": "^2.2.1",
-		"npm": "^6.9.0",
+		"npm": "^9.6.5",
 		"unsplash-js": "^5.0.0"
 	}
 }
